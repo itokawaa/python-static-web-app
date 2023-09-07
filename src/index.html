@@ -13,7 +13,28 @@
     <h1>Vanilla JavaScript App</h1>
     <p>Loading content from the API１: <b id="name">...</b></p>
     </main>
-
+    <script>
+        $(function(){
+          $.ajax({
+            url:'/api/message',
+            type:'POST',
+            dataType: 'json'
+          })
+          // Ajax通信が成功したら発動
+          .done( (data) => {
+            var data_stringify = JSON.stringify(data);
+            var data_json = JSON.parse(data_stringify);
+            $('#name').html(data_json["text"]);
+          })
+          // Ajax通信が失敗したら発動
+          .fail( (jqXHR, textStatus, errorThrown) => {
+            alert('Ajax通信に失敗しました。');
+            console.log("jqXHR          : " + jqXHR.status); // HTTPステータスを表示
+            console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラーなどのエラー情報を表示
+            console.log("errorThrown    : " + errorThrown.message); // 例外情報を表示
+          })
+        });
+    </script>  
 </body>
 
 </html>
