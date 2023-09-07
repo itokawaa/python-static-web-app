@@ -22,6 +22,7 @@
           })
           // Ajax通信が成功したら発動
           .done( (data) => {
+            alert('成功');
             var data_stringify = JSON.stringify(data);
             var data_json = JSON.parse(data_stringify);
             $('#name').html(data_json["text"]);
