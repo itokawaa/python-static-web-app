@@ -21,5 +21,5 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             'text': id
         }),
         status_code=200,
-        headers={'Set-Cookie': 'id=' + id + '; httponly; Secure; SameSite=Strict; path=/; expires=' + expires}
+        headers={'Set-Cookie': 'id=' + id + '; httponly; Secure; path=/; expires=' + expires}
     )
