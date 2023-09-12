@@ -22,5 +22,5 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             'text': id
         }),
         status_code=200,
-        headers={'Set-Cookie': 'id=' + id + '; httponly; Secure; Domain=thankful-flower-0fd4a9400.3.azurestaticapps.net; Path=/; expires=' + expires}
+        headers={'Set-Cookie': 'id=' + id + '; httponly; Secure; Domain=.3.azurestaticapps.net; Path=/; expires=' + expires}
     )
