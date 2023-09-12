@@ -14,7 +14,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     except:
         id = str(uuid.uuid4())
 
-    # コメントをいれてごまかす
     expires = datetime.datetime.utcnow() + datetime.timedelta(minutes=5)
     expires = expires.strftime("%a, %d %b %Y %H:%M:%S GMT")
     return func.HttpResponse(
